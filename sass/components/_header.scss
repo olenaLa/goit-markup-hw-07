@@ -1,0 +1,84 @@
+.list-site-nav {
+  @extend %list;
+  margin-left: 80px;
+}
+.list-auth-nav {
+  @extend %list;
+  margin-left: auto;
+}
+.list-auth-nav .item:not(:last-child) {
+  margin-right: 30px;
+}
+.list-site-nav {
+  .item:not(:last-child) {
+    margin-right: 50px;
+  }
+  .link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    color: $ttl-text-color;
+    font-weight: 500;
+
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .link:hover,
+  .link:focus,
+  .current:visited {
+    color: $accent-color;
+  }
+  .item {
+    position: relative;
+  }
+  .current::after {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 4px;
+    border-radius: 2px;
+    margin: 0 auto;
+    background-color: $accent-color;
+  }
+}
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  .left-nav {
+    display: flex;
+    align-items: center;
+  }
+  .border {
+    border-bottom: 1px solid $border-color;
+  }
+}
+.auth-nav-contact {
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: $pr-text-color;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .icon-nav {
+    fill: currentColor;
+    width: 16px;
+    max-height: 15px;
+    margin-right: 10px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    fill: $accent-color;
+  }
+}
